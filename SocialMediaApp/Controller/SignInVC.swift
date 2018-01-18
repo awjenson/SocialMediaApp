@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  SignInVC.swift
 //  SocialMediaApp
 //
 //  Created by Andrew Jenson on 1/18/18.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class SignInVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
