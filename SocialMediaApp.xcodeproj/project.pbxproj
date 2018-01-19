@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		0E080E10FE5588A031B68142 /* Pods_SocialMediaApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF69C0E0BF82CCA5DC25AFD8 /* Pods_SocialMediaApp.framework */; };
+		DA8DE4212012503A00BA5417 /* DesignView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8DE4202012503A00BA5417 /* DesignView.swift */; };
+		DA8DE424201250D700BA5417 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8DE423201250D700BA5417 /* Constants.swift */; };
+		DA8DE426201252CD00BA5417 /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8DE425201252CD00BA5417 /* RoundButton.swift */; };
+		DA8DE428201254B200BA5417 /* DesignTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8DE427201254B200BA5417 /* DesignTextField.swift */; };
+		DA8DE42A2012560200BA5417 /* DesignButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8DE4292012560200BA5417 /* DesignButton.swift */; };
 		DAE68FC9201147FB0028292E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE68FC8201147FB0028292E /* AppDelegate.swift */; };
 		DAE68FCB201147FB0028292E /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE68FCA201147FB0028292E /* SignInVC.swift */; };
 		DAE68FCE201147FB0028292E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAE68FCC201147FB0028292E /* Main.storyboard */; };
@@ -20,6 +25,11 @@
 		8F51D6F8F2176AA76A806FEE /* Pods-SocialMediaApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SocialMediaApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-SocialMediaApp/Pods-SocialMediaApp.release.xcconfig"; sourceTree = "<group>"; };
 		A93D0CB82E8C13FA685D3451 /* Pods-SocialMediaApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SocialMediaApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SocialMediaApp/Pods-SocialMediaApp.debug.xcconfig"; sourceTree = "<group>"; };
 		CF69C0E0BF82CCA5DC25AFD8 /* Pods_SocialMediaApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SocialMediaApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DA8DE4202012503A00BA5417 /* DesignView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignView.swift; sourceTree = "<group>"; };
+		DA8DE423201250D700BA5417 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		DA8DE425201252CD00BA5417 /* RoundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
+		DA8DE427201254B200BA5417 /* DesignTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignTextField.swift; sourceTree = "<group>"; };
+		DA8DE4292012560200BA5417 /* DesignButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignButton.swift; sourceTree = "<group>"; };
 		DAE68FC5201147FB0028292E /* SocialMediaApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SocialMediaApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAE68FC8201147FB0028292E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DAE68FCA201147FB0028292E /* SignInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
@@ -59,6 +69,14 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		DA8DE422201250BD00BA5417 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				DA8DE423201250D700BA5417 /* Constants.swift */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
 		DAA74FA220114AE300CFAA83 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -69,6 +87,10 @@
 		DAA74FA320114AEB00CFAA83 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				DA8DE425201252CD00BA5417 /* RoundButton.swift */,
+				DA8DE4292012560200BA5417 /* DesignButton.swift */,
+				DA8DE4202012503A00BA5417 /* DesignView.swift */,
+				DA8DE427201254B200BA5417 /* DesignTextField.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -102,6 +124,7 @@
 		DAE68FC7201147FB0028292E /* SocialMediaApp */ = {
 			isa = PBXGroup;
 			children = (
+				DA8DE422201250BD00BA5417 /* Utility */,
 				DAA74FA220114AE300CFAA83 /* Model */,
 				DAA74FA320114AEB00CFAA83 /* View */,
 				DAA74FA420114AF100CFAA83 /* Controller */,
@@ -252,7 +275,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				DAE68FCB201147FB0028292E /* SignInVC.swift in Sources */,
+				DA8DE426201252CD00BA5417 /* RoundButton.swift in Sources */,
 				DAE68FC9201147FB0028292E /* AppDelegate.swift in Sources */,
+				DA8DE4212012503A00BA5417 /* DesignView.swift in Sources */,
+				DA8DE42A2012560200BA5417 /* DesignButton.swift in Sources */,
+				DA8DE424201250D700BA5417 /* Constants.swift in Sources */,
+				DA8DE428201254B200BA5417 /* DesignTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
