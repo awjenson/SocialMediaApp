@@ -13,6 +13,10 @@
 		DA8DE426201252CD00BA5417 /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8DE425201252CD00BA5417 /* RoundButton.swift */; };
 		DA8DE428201254B200BA5417 /* DesignTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8DE427201254B200BA5417 /* DesignTextField.swift */; };
 		DA8DE42A2012560200BA5417 /* DesignButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA8DE4292012560200BA5417 /* DesignButton.swift */; };
+		DADB16092013C6A7000AD0C1 /* FeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADB16082013C6A7000AD0C1 /* FeedVC.swift */; };
+		DADB160B2013D94A000AD0C1 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADB160A2013D94A000AD0C1 /* CircleView.swift */; };
+		DADB160D2013E8A1000AD0C1 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADB160C2013E8A1000AD0C1 /* PostCell.swift */; };
+		DADB16102013F94F000AD0C1 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DADB160F2013F94F000AD0C1 /* DataService.swift */; };
 		DAE68FC9201147FB0028292E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE68FC8201147FB0028292E /* AppDelegate.swift */; };
 		DAE68FCB201147FB0028292E /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE68FCA201147FB0028292E /* SignInVC.swift */; };
 		DAE68FCE201147FB0028292E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAE68FCC201147FB0028292E /* Main.storyboard */; };
@@ -30,6 +34,10 @@
 		DA8DE425201252CD00BA5417 /* RoundButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
 		DA8DE427201254B200BA5417 /* DesignTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignTextField.swift; sourceTree = "<group>"; };
 		DA8DE4292012560200BA5417 /* DesignButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignButton.swift; sourceTree = "<group>"; };
+		DADB16082013C6A7000AD0C1 /* FeedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedVC.swift; sourceTree = "<group>"; };
+		DADB160A2013D94A000AD0C1 /* CircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
+		DADB160C2013E8A1000AD0C1 /* PostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
+		DADB160F2013F94F000AD0C1 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		DAE68FC5201147FB0028292E /* SocialMediaApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SocialMediaApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAE68FC8201147FB0028292E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DAE68FCA201147FB0028292E /* SignInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
@@ -88,9 +96,11 @@
 			isa = PBXGroup;
 			children = (
 				DA8DE425201252CD00BA5417 /* RoundButton.swift */,
+				DADB160A2013D94A000AD0C1 /* CircleView.swift */,
 				DA8DE4292012560200BA5417 /* DesignButton.swift */,
 				DA8DE4202012503A00BA5417 /* DesignView.swift */,
 				DA8DE427201254B200BA5417 /* DesignTextField.swift */,
+				DADB160C2013E8A1000AD0C1 /* PostCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -99,8 +109,17 @@
 			isa = PBXGroup;
 			children = (
 				DAE68FCA201147FB0028292E /* SignInVC.swift */,
+				DADB16082013C6A7000AD0C1 /* FeedVC.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		DADB160E2013F936000AD0C1 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				DADB160F2013F94F000AD0C1 /* DataService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		DAE68FBC201147FB0028292E = {
@@ -124,6 +143,7 @@
 		DAE68FC7201147FB0028292E /* SocialMediaApp */ = {
 			isa = PBXGroup;
 			children = (
+				DADB160E2013F936000AD0C1 /* Services */,
 				DA8DE422201250BD00BA5417 /* Utility */,
 				DAA74FA220114AE300CFAA83 /* Model */,
 				DAA74FA320114AEB00CFAA83 /* View */,
@@ -232,15 +252,23 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-SocialMediaApp/Pods-SocialMediaApp-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftKeychainWrapper/SwiftKeychainWrapper.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftKeychainWrapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -274,13 +302,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DADB160B2013D94A000AD0C1 /* CircleView.swift in Sources */,
 				DAE68FCB201147FB0028292E /* SignInVC.swift in Sources */,
 				DA8DE426201252CD00BA5417 /* RoundButton.swift in Sources */,
 				DAE68FC9201147FB0028292E /* AppDelegate.swift in Sources */,
 				DA8DE4212012503A00BA5417 /* DesignView.swift in Sources */,
+				DADB16102013F94F000AD0C1 /* DataService.swift in Sources */,
+				DADB16092013C6A7000AD0C1 /* FeedVC.swift in Sources */,
 				DA8DE42A2012560200BA5417 /* DesignButton.swift in Sources */,
 				DA8DE424201250D700BA5417 /* Constants.swift in Sources */,
 				DA8DE428201254B200BA5417 /* DesignTextField.swift in Sources */,
+				DADB160D2013E8A1000AD0C1 /* PostCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
