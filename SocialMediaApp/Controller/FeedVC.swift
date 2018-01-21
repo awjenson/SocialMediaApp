@@ -20,6 +20,11 @@ class FeedVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         tableView.dataSource = self
         tableView.delegate = self
 
+        // Reference the database
+        DataService.ds.REF_POSTS.observe(.value) { (snapshot) in
+            print(snapshot.value)
+        }
+
     }
 
     // Table View
