@@ -57,7 +57,7 @@ class SignInVC: UIViewController {
         // Auth with Firebase
         Auth.auth().signIn(with: credential, completion: { (user, error) in
             if error != nil {
-                print("ANDREW: Unable to authenticate with Firebase - \(error)")
+                print("ANDREW: Unable to authenticate with Firebase - \(String(describing: error))")
             } else {
                 print("ANDREW: Successfully authenticated with Firebase")
                 // Add a string value to keychain
@@ -107,7 +107,4 @@ class SignInVC: UIViewController {
         performSegue(withIdentifier: "goToFeed", sender: nil)
     }
 
-    
-
 }
-

@@ -16,18 +16,27 @@ class PostCell: UITableViewCell {
     @IBOutlet weak var postImg: UIImageView!
     @IBOutlet weak var caption: UITextView!
     @IBOutlet weak var likesLbl: UILabel!
+    @IBOutlet weak var likeImg: UIImageView!
 
     var post: Post!
+    var likesRef: DatabaseReference!
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+
+        // Creat tap gesture recognizer
+        let tap = UITapGestureRecognizer(target: self, action: #selector(likeTapped))
+        tap.numberOfTapsRequired = 1
+        likeImg.addGestureRecognizer(tap)
+        likeImg.isUserInteractionEnabled = true
+
     }
 
     // If the image is not in our cache then we need to download it (optional)
     // img: has a default value of nil
     func configureCell(post: Post, img: UIImage? = nil) {
         self.post = post
+        likesRef = DataService.ds.REF_USERS_CURRENT.child("likes").child(post.postKey)
         self.caption.text = post.caption
         self.likesLbl.text = "\(post.likes)"
 
@@ -51,7 +60,41 @@ class PostCell: UITableViewCell {
                 }
             })
         }
+
+        // When this cell is configured, it checks if the image has been like by the user, and display an empty-heart if the user has not liked the image, and display a filled-heart if the user has liked the image.
+
+        likesRef.observeSingleEvent(of: .value) { (snapshot) in
+            // Firebase works with JSON which uses Null (not nil)
+            if let _ = snapshot.value as? NSNull {
+                // If this is null, then set our like image
+                self.likeImg.image = UIImage(named: "empty-heart")
+            } else {
+                // User has liked it
+                self.likeImg.image = UIImage(named: "filled-heart")
+            }
+        }
+
     }
+
+    @objc func likeTapped(sender: UITapGestureRecognizer) {
+
+        likesRef.observeSingleEvent(of: .value) { (snapshot) in
+            // Firebase works with JSON which uses Null (not nil)
+            if let _ = snapshot.value as? NSNull {
+                // If this is null, then set our like image
+                self.likeImg.image = UIImage(named: "filled-heart")
+                self.post.adjustLikes(addLike: true)
+                self.likesRef.setValue(true)
+            } else {
+                // User has liked it
+                self.likeImg.image = UIImage(named: "empty-heart")
+                self.post.adjustLikes(addLike: false)
+                self.likesRef.removeValue()
+            }
+        }
+    }
+
+    
 
     
 

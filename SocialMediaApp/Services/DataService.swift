@@ -8,6 +8,7 @@
 
 import Foundation
 import Firebase
+import SwiftKeychainWrapper
 
 // Global Variable
 
@@ -41,6 +42,14 @@ class DataService {
         return _REF_USERS
     }
 
+    var REF_USERS_CURRENT: DatabaseReference {
+        // get unique keychain value (import keychainwrapper)
+        let uid = KeychainWrapper.standard.string(forKey: KEY_UID)
+        let user = REF_USERS.child(uid!)
+        return user
+
+    }
+
     var REF_POST_IMAGES: StorageReference {
         return _REF_POST_IMAGES
     }
@@ -50,7 +59,6 @@ class DataService {
 
         // reference to where we want to write to, if a uid does not already exist then Firebase will create a new uid (for a new user)
         REF_USERS.child(uid).updateChildValues(userData)
-
     }
 
 }

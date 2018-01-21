@@ -203,6 +203,9 @@
                                                     <constraint firstAttribute="height" constant="50" id="Zj4-BM-zta"/>
                                                 </constraints>
                                                 <state key="normal" image="add-post"/>
+                                                <connections>
+                                                    <action selector="postButtonTapped:" destination="9X4-WP-9J7" eventType="touchUpInside" id="KRY-WO-I2Y"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -324,6 +327,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="caption" destination="mfT-1S-EYJ" id="jIc-iN-fGP"/>
+                                            <outlet property="likeImg" destination="kVU-Sx-tOl" id="fE3-6M-xse"/>
                                             <outlet property="likesLbl" destination="Cww-D1-8J1" id="nVU-0j-4Mh"/>
                                             <outlet property="postImg" destination="1Ql-cl-dPD" id="Xhx-gI-AG0"/>
                                             <outlet property="profileImg" destination="eaL-pu-say" id="313-aP-VYB"/>
@@ -349,6 +353,7 @@
                         <viewLayoutGuide key="safeArea" id="4VY-7Z-M4s"/>
                     </view>
                     <connections>
+                        <outlet property="captionField" destination="dgt-Uw-zsC" id="9pc-Ch-izi"/>
                         <outlet property="imageAdd" destination="fzg-CV-pwT" id="ksD-c0-Kzm"/>
                         <outlet property="tableView" destination="oLh-f3-wHS" id="NFg-Pi-MgM"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="goToSignIn" id="EYD-45-S9h"/>
