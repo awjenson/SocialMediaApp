@@ -13,14 +13,19 @@ import Firebase
 
 // Database URL located in GoogleService-Info.plist
 let DB_BASE = Database.database().reference()
+let STORAGE_BASE = Storage.storage().reference()
 
 class DataService {
 
     static let ds = DataService()
-
+    
+    // DB References
     private var _REF_BASE = DB_BASE  // socialmediaapp-190be
     private var _REF_POSTS = DB_BASE.child("posts")
     private var _REF_USERS = DB_BASE.child("users")
+
+    // Storage References
+    private var _REF_POST_IMAGES = STORAGE_BASE.child("post-pics")
 
     // Computed Properties - To keep code secure (no one can reference them)
     // Use these references to post to Firebase
@@ -34,6 +39,10 @@ class DataService {
 
     var REF_USERS: DatabaseReference {
         return _REF_USERS
+    }
+
+    var REF_POST_IMAGES: StorageReference {
+        return _REF_POST_IMAGES
     }
 
     // We can get uid when we authenticate
