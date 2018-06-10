@@ -18,7 +18,5 @@ class DesignView: UIView {
         layer.shadowRadius = 5.0 // how far the shadow spans out
         layer.shadowOffset = CGSize(width: 1.0, height: 1.0)
         layer.cornerRadius = 2.0
-        
     }
-
 }

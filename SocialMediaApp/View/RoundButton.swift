@@ -18,7 +18,6 @@ class RoundButton: UIButton {
         layer.shadowRadius = 5.0 // how far the shadow spans out
         layer.shadowOffset = CGSize(width: 1.0, height: 1.0)
         imageView?.contentMode = .scaleAspectFit
-
     }
 
     // Round Button
@@ -27,8 +26,4 @@ class RoundButton: UIButton {
 
         layer.cornerRadius = self.frame.width / 2
     }
-
-
-
-
 }

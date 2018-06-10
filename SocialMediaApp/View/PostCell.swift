@@ -93,14 +93,4 @@ class PostCell: UITableViewCell {
             }
         }
     }
-
-    
-
-    
-
-
-
-
-    
-
 }

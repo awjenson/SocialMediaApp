@@ -16,8 +16,6 @@ class FeedVC: UIViewController, UITableViewDataSource, UITableViewDelegate, UIIm
     @IBOutlet weak var imageAdd: CircleView!
     @IBOutlet weak var captionField: UITextField!
     @IBOutlet weak var likeImg: UIImageView!
-    
-
 
     // Initialize Array of Post objects
     var posts = [Post]()
@@ -112,9 +110,6 @@ class FeedVC: UIViewController, UITableViewDataSource, UITableViewDelegate, UIIm
         tableView.reloadData()
     }
 
-
-
-
     @IBAction func signOutButtonTapped(_ sender: UIButton) {
 
         // Remove ID from Keychain
@@ -165,14 +160,4 @@ class FeedVC: UIViewController, UITableViewDataSource, UITableViewDelegate, UIIm
             })
         }
     }
-    
-
-
-
-
-
-
-
-
-
 }
